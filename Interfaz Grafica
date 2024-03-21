@@ -1,0 +1,27 @@
+import tkinter
+
+ventana = tkinter.Tk() #Contenedor de graficos
+ventana.geometry("400x400")
+
+etiqueta = tkinter.Label(ventana,text="Hola mundo",bg="green") #bg color del recuadro 
+etiqueta.pack(fill=tkinter.X) #mostrar la etiqueta, colocar el label en la ventana -> tkinter.bottom (comandos) -> sin parametros -> tkinter.x backgorun ancho de la ventana
+
+cajaNumero1 = tkinter.Entry(ventana,font="Helveltica 20 ") #Caja para ingresar datos 
+cajaNumero1.pack()
+cajaNumero2 = tkinter.Entry(ventana,font="Herlveltica 20") 
+cajaNumero2.pack()
+
+def numeroDeLaCaja():
+    numero1 = int(cajaNumero1.get())
+    numero2 = int(cajaNumero2.get())
+    resulMultiplicacion = numero1*numero2
+    etiquetaResult ["text"] = resulMultiplicacion
+    #print("El resultado de la multiplicacion = ",respuesta)
+
+boton = tkinter.Button(ventana,text="Multiplicar",command=numeroDeLaCaja) # command llama la funcion para mostrar lo que tiene , se puede crear un lambda para los parametros 
+boton.pack() #mostrar el boton
+
+etiquetaResult = tkinter.Label(ventana,text="",bg="pink",font="Helvetica 20")
+etiquetaResult.pack(fill=tkinter.X) #Colocar el label en la pantalla
+
+ventana.mainloop() #ventana abierta 
